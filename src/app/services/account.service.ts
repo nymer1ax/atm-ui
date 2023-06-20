@@ -7,16 +7,18 @@ import { Account } from '../interfaces/account';
   providedIn: 'root'
 })
 export class AccountService {
-  private apiUrl = '/api/accounts';
+  private apiUrl = 'http://localhost:8081/api'; 
 
   constructor(private http: HttpClient) { }
 
   createAccount(account: Account): Observable<Account> {
-    return this.http.post<Account>(this.apiUrl, account);
+    const url = `${this.apiUrl}/accounts`;
+    return this.http.post<Account>(url, account);
   }
 
   getAccounts(): Observable<Account[]> {
-    return this.http.get<Account[]>(this.apiUrl);
+    const url = `${this.apiUrl}/accounts`;
+    return this.http.get<Account[]>(url);
   }
 }
 

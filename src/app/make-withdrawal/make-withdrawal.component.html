@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card">
+      <h2>Make Withdrawal</h2>
+      <form (submit)="makeWithdrawal()">
+        <div class="form-group">
+          <label for="accountId">Account ID:</label>
+          <select id="accountId" [(ngModel)]="transaction.accountId" class="form-control" required>
+            <option *ngFor="let account of accounts" [value]="account.id">{{ account.accountNumber }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" [(ngModel)]="transaction.amount" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  

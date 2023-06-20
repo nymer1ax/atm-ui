@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TransactionsHistoryComponent } from './transactions-history/transactions-history.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import { MakeDepositComponent } from './make-deposit/make-deposit.component';
+import { MakeWithdrawalComponent } from './make-withdrawal/make-withdrawal.component';
+import { MakeTransferComponent } from './make-transfer/make-transfer.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { MakeDepositComponent } from './make-deposit/make-deposit.component';
     CreateAccountComponent,
     TransactionsHistoryComponent,
     AccountListComponent,
-    MakeDepositComponent
+    MakeDepositComponent,
+    MakeWithdrawalComponent,
+    MakeTransferComponent
   ],
   imports: [
     BrowserModule,
