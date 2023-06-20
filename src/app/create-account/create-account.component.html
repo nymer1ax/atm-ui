@@ -1,19 +1,23 @@
 <div class="container">
   <div class="card">
     <h2>Create Account</h2>
-    <form (submit)="createAccount()">
+    <form (submit)="createAccount()" #accountForm="ngForm">
       <div class="form-group">
         <label for="accountNumber">Account Number</label>
-        <input type="text" id="accountNumber" [(ngModel)]="account.accountNumber" required>
+        <input type="text" id="accountNumber" [(ngModel)]="account.accountNumber" name="accountNumber" required>
+        <div *ngIf="accountForm.controls['accountNumber'].errors?.['required']" class="error-message">Account Number is required</div>
       </div>
       <div class="form-group">
         <label for="balance">Balance</label>
-        <input type="number" id="balance" [(ngModel)]="account.balance" required>
+        <input type="number" id="balance" [(ngModel)]="account.balance" name="balance" required>
       </div>
       <button type="submit">Create</button>
     </form>
   </div>
 </div>
+
+
+
 
 
 

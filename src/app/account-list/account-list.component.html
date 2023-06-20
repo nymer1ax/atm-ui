@@ -1,21 +1,22 @@
 <div class="container">
-    <div class="card">
-      <h2>Account List</h2>
-      <div class="list-view" *ngIf="!selectedAccount">
-        <ul>
-          <li *ngFor="let account of accounts" (click)="selectAccount(account)">
-            <span>{{ account.accountNumber }}</span>
-            <span>{{ account.balance }}</span>
-          </li>
-        </ul>
-      </div>
-      <div class="detail-view" *ngIf="selectedAccount">
-        <div class="card">
-          <h3>{{ selectedAccount.accountNumber }}</h3>
-          <p>Balance: {{ selectedAccount.balance }}</p>
-          <button (click)="deselectAccount()">Back to List</button>
-        </div>
+  <div class="card">
+    <h2>Account List</h2>
+    <div class="list-view" *ngIf="!selectedAccount">
+      <ul>
+        <li *ngFor="let account of accounts" (click)="selectAccount(account)">
+          <span><strong>Account:</strong> {{ account.accountNumber }}</span>
+          <span><strong>Balance:</strong> {{ account.balance }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="detail-view" *ngIf="selectedAccount">
+      <div class="card">
+        <h3>{{ selectedAccount.accountNumber }}</h3>
+        <p><strong>Balance:</strong> {{ selectedAccount.balance }}</p>
+        <button (click)="deselectAccount()">Back to List</button>
       </div>
     </div>
   </div>
+</div>
+
   

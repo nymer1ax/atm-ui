@@ -27,8 +27,13 @@ export class MakeDepositComponent implements OnInit {
   }
 
   makeDeposit(): void {
-    this.transactionService.makeDeposit(this.transaction)
-      .subscribe(() => {
-      });
+    if (this.transaction.accountId && this.transaction.amount) {
+      this.transaction.accountId = Number(this.transaction.accountId); // Convierte el valor a número
+      this.transactionService.makeDeposit(this.transaction)
+        .subscribe(() => {
+          // Aquí puedes agregar el código que deseas ejecutar después de que se complete el depósito
+        });
+    }
   }
 }
+

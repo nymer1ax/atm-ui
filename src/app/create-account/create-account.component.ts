@@ -19,6 +19,10 @@ export class CreateAccountComponent implements OnInit {
   }
 
   createAccount() {
+    if (!this.account.accountNumber) {
+      return; // Si el campo accountNumber está vacío, no se envía la solicitud
+    }
+
     this.accountService.createAccount(this.account).subscribe(response => {
       console.log(response); 
       this.resetForm();
@@ -32,3 +36,4 @@ export class CreateAccountComponent implements OnInit {
     };
   }
 }
+
