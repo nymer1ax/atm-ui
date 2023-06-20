@@ -27,22 +27,38 @@ export class MakeTransferComponent implements OnInit {
   }
 
   makeTransfer(): void {
-    const sourceAccount = this.accounts.find(account => account.id === this.transfer.sourceAccountId);
-    const destinationAccount = this.accounts.find(account => account.id === this.transfer.destinationAccountId);
+    const sourceAccountId = Number(this.transfer.sourceAccountId);
+    const destinationAccountId = Number(this.transfer.destinationAccountId);
   
-
-    if (sourceAccount && destinationAccount) {
-      this.transfer.sourceAccountId = sourceAccount.id ?? null;
-      this.transfer.destinationAccountId = destinationAccount.id ?? null;
+    console.log("paso 1");
+  
+    if (
+      !isNaN(sourceAccountId) && !isNaN(destinationAccountId) &&
+      this.accounts.some(account => account.id === sourceAccountId) &&
+      this.accounts.some(account => account.id === destinationAccountId)
+    ) {
+      console.log("paso 2");
+  
+      this.transfer.sourceAccountId = sourceAccountId;
+      this.transfer.destinationAccountId = destinationAccountId;
   
       this.transactionService.makeTransfer(this.transfer)
         .subscribe(() => {
-          console.log("transferido")
+          console.log("transferido");
         });
+  
+      console.log("paso 3");
     }
+  
+    console.log("paso 4");
   }
   
-}
+  
+  
+  }
+  
+  
+
 
 
 
