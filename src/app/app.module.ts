@@ -7,13 +7,17 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TransactionsHistoryComponent } from './transactions-history/transactions-history.component';
+import { AccountListComponent } from './account-list/account-list.component';
+import { MakeDepositComponent } from './make-deposit/make-deposit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateAccountComponent,
-    TransactionsHistoryComponent
+    TransactionsHistoryComponent,
+    AccountListComponent,
+    MakeDepositComponent
   ],
   imports: [
     BrowserModule,

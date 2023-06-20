@@ -14,5 +14,9 @@ export class AccountService {
   createAccount(account: Account): Observable<Account> {
     return this.http.post<Account>(this.apiUrl, account);
   }
+
+  getAccounts(): Observable<Account[]> {
+    return this.http.get<Account[]>(this.apiUrl);
+  }
 }
 
