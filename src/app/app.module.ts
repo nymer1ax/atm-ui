@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TransactionsHistoryComponent } from './transactions-history/transactions-history.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    TransactionsHistoryComponent
   ],
   imports: [
     BrowserModule,
