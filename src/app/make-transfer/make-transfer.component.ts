@@ -11,7 +11,7 @@ import { TransactionService } from '../services/transactions.service';
 })
 export class MakeTransferComponent implements OnInit {
   accounts: Account[] = [];
-  transfer: Transfer = { sourceAccountId: 0, destinationAccountId: 0, amount: 0 };
+  transfer: Transfer = { sourceAccountId: null, destinationAccountId: null, amount: null };
 
   constructor(private accountService: AccountService, private transactionService: TransactionService) { }
 
@@ -29,18 +29,20 @@ export class MakeTransferComponent implements OnInit {
   makeTransfer(): void {
     const sourceAccount = this.accounts.find(account => account.id === this.transfer.sourceAccountId);
     const destinationAccount = this.accounts.find(account => account.id === this.transfer.destinationAccountId);
+  
 
     if (sourceAccount && destinationAccount) {
-      this.transfer.sourceAccountId = sourceAccount.id!;
-      this.transfer.destinationAccountId = destinationAccount.id!;
-
+      this.transfer.sourceAccountId = sourceAccount.id ?? null;
+      this.transfer.destinationAccountId = destinationAccount.id ?? null;
+  
       this.transactionService.makeTransfer(this.transfer)
         .subscribe(() => {
+          console.log("transferido")
         });
     }
   }
+  
 }
-
 
 
 

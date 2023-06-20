@@ -1,6 +1,6 @@
 export interface Transfer {
-    sourceAccountId: number;
-    destinationAccountId: number;
-    amount: number;
+    sourceAccountId: number | null;
+    destinationAccountId: number | null;
+    amount: number | null;
   }
   
