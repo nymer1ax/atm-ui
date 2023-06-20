@@ -29,7 +29,6 @@ export class MakeWithdrawalComponent implements OnInit {
   makeWithdrawal(): void {
     this.transactionService.makeWithdrawal(this.transaction)
       .subscribe(() => {
-        // Realizar cualquier acción adicional después de hacer el retiro
       });
   }
 }
